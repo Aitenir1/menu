@@ -47,12 +47,12 @@ class OrderSerializer(serializers.ModelSerializer):
             comment=comment
         )
 
-        print_receipt(
-            customer=False,
-            items=order_items,
-            table=table,
-            comment=comment
-        )
+        # print_receipt(
+        #    customer=False,
+        #    items=order_items,
+        #    table=table,
+        #    comment=comment
+        #)
 
         return order
 

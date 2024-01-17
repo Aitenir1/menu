@@ -24,6 +24,7 @@ class OrderCreateApi(generics.CreateAPIView):
 
 
 class OrderStatusUpdateApi(generics.UpdateAPIView):
+    queryset = Order.objects.all()
 
     def patch(self, request, *args, **kwargs):
         pk = kwargs['pk']
@@ -35,7 +36,7 @@ class OrderStatusUpdateApi(generics.UpdateAPIView):
         order.status = 1
         order.save()
 
-        print_receipt(customer=True, order=order)
+        ## print_receipt(customer=True, order=order)
 
         serializer = OrderSerializer(order)
 
